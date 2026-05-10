@@ -70,7 +70,14 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className={`w-10 h-10 rounded-sm flex items-center justify-center overflow-hidden bg-brand-navy`}>
-            <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" onError={(e) => e.currentTarget.style.display = 'none'} />
+           <img
+  src="/images/logo.png"
+  alt="Logo"
+  className="w-full h-full object-contain"
+  onError={(e) => {
+    e.currentTarget.style.display = 'none';
+  }}
+/>
           </div>
           <span className={`font-display font-black text-2xl uppercase tracking-tighter ${logoTextColorStyle}`}>
             Ghulam <span className="text-brand-gold">Business Center</span>
