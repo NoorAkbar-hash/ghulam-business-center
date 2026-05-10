@@ -1,18 +1,16 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, setPersistence, inMemoryPersistence } from 'firebase/auth';
-import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 import firebaseConfig from '../../firebase-applet-config.json';
 
+// INIT APP
 const app = initializeApp(firebaseConfig);
 
-// 🔐 AUTH
+// AUTH
 export const auth = getAuth(app);
 
-// 🔥 FORCE LOGOUT ON REFRESH / TAB CLOSE
-setPersistence(auth, inMemoryPersistence);
-
-// 🔥 FIRESTORE
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+// FIRESTORE (SIMPLE + SAFE)
+export const db = getFirestore(app);
 
 // ENUMS
 export enum OperationType {
@@ -24,44 +22,17 @@ export enum OperationType {
   WRITE = 'write',
 }
 
-interface FirestoreErrorInfo {
-  error: string;
-  operationType: OperationType;
-  path: string | null;
-  authInfo: {
-    userId?: string | null;
-    email?: string | null;
-    emailVerified?: boolean | null;
-    isAnonymous?: boolean | null;
-  }
-}
-
+// ERROR HANDLER
 export function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
-  const errInfo: FirestoreErrorInfo = {
+  console.error({
     error: error instanceof Error ? error.message : String(error),
-    authInfo: {
-      userId: auth.currentUser?.uid,
-      email: auth.currentUser?.email,
-      emailVerified: auth.currentUser?.emailVerified,
-      isAnonymous: auth.currentUser?.isAnonymous
-    },
     operationType,
-    path
-  };
-
-  console.error('Firestore Error: ', JSON.stringify(errInfo));
-  throw new Error(JSON.stringify(errInfo));
-}
-
-// 🔍 CONNECTION TEST
-async function testConnection() {
-  try {
-    await getDocFromServer(doc(db, 'test', 'connection'));
-  } catch (error) {
-    if (error instanceof Error && error.message.includes('client is offline')) {
-      console.error("Firebase config issue: client offline detected");
+    path,
+    auth: {
+      uid: auth.currentUser?.uid,
+      email: auth.currentUser?.email,
     }
-  }
-}
+  });
 
-testConnection();
+  throw error;
+}
