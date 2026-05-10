@@ -24,9 +24,12 @@ export default function About() {
                 className="rounded-2xl overflow-hidden shadow-lg h-80"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" 
+                  src="/images/ghulam_ceo.jpg" 
                   alt="Corporate Tower" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800";
+                  }}
                 />
               </motion.div>
               <motion.div 
@@ -48,9 +51,12 @@ export default function About() {
                 className="col-span-2 rounded-2xl overflow-hidden shadow-lg h-64 -mt-10"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200" 
+                  src="/images/ghulam_reception_1.jpg" 
                   alt="Office Space" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200";
+                  }}
                 />
               </motion.div>
             </div>

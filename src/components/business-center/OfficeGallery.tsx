@@ -3,14 +3,14 @@ import { Camera } from 'lucide-react';
 
 const images = [
   { 
-    url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
-    title: "Executive Suite",
+    url: "/images/ghulam_reception_2.jpg",
+    title: "Executive Reception",
     category: "Premium Office"
   },
   { 
-    url: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200",
-    title: "Skyline Conference",
-    category: "Meeting Rooms"
+    url: "/images/ghulam_reception_1.jpg",
+    title: "Main Lobby",
+    category: "Business Center"
   },
   { 
     url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200",

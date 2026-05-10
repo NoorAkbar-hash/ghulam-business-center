@@ -14,9 +14,12 @@ export default function BusinessCenterHero() {
       {/* Cinematic Background */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" 
+          src="/images/ghulam_reception_1.jpg" 
           alt="Modern Office" 
           className="w-full h-full object-cover opacity-30"
+          onError={(e) => {
+            e.currentTarget.src = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000";
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent" />
       </div>
@@ -91,9 +94,12 @@ export default function BusinessCenterHero() {
               className="relative z-20 bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-2xl max-w-md mx-auto"
             >
               <img 
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" 
+                src="/images/ghulam_reception_2.jpg" 
                 alt="Executive Office" 
                 className="w-full h-64 object-cover rounded-2xl mb-6 shadow-lg"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800";
+                }}
               />
               <div className="flex items-center justify-between">
                 <div>

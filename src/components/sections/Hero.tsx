@@ -8,10 +8,13 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1577985051167-0d49eec21977?auto=format&fit=crop&q=80&w=2000" 
+          src="/images/ghulam_office_skyline.jpg" 
           alt="Qatar Skyline" 
           className="w-full h-full object-cover opacity-30 grayscale"
           fetchPriority="high"
+          onError={(e) => {
+            e.currentTarget.src = "https://images.unsplash.com/photo-1577985051167-0d49eec21977?auto=format&fit=crop&q=80&w=2000";
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"></div>
       </div>
