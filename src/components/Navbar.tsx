@@ -70,14 +70,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className={`w-10 h-10 rounded-sm flex items-center justify-center overflow-hidden bg-brand-navy`}>
-           <img
-  src="/images/logo.png"
-  alt="Logo"
-  className="w-full h-full object-contain"
-  onError={(e) => {
-    e.currentTarget.style.display = 'none';
-  }}
-/>
+            <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" onError={(e) => e.currentTarget.style.display = 'none'} />
           </div>
           <span className={`font-display font-black text-2xl uppercase tracking-tighter ${logoTextColorStyle}`}>
             Ghulam <span className="text-brand-gold">Business Center</span>
@@ -93,15 +86,15 @@ export default function Navbar() {
               onMouseEnter={() => link.dropdown && setActiveDropdown(link.name)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a 
-                href={link.href}
+              <Link 
+                to={link.href}
                 className={`font-semibold text-xs uppercase tracking-wider transition-colors flex items-center gap-1 ${
                   isScrolled ? 'text-brand-navy hover:text-brand-gold' : 'text-white/90 hover:text-white'
                 }`}
               >
                 {link.name}
                 {link.dropdown && <ChevronDown size={14} />}
-              </a>
+              </Link>
               
               {link.dropdown && (
                 <AnimatePresence>

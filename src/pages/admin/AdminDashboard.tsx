@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -100,24 +100,27 @@ export default function AdminDashboard() {
     }
   };
 
-  const filteredLeads = leads.filter(lead => {
-    const matchesSearch = lead.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          lead.email.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = statusFilter === 'All' || lead.status === statusFilter;
-    const matchesService = serviceFilter === 'All' || lead.service === serviceFilter;
-    return matchesSearch && matchesStatus && matchesService;
-  });
+  const filteredLeads = useMemo(() => {
+    return leads.filter(lead => {
+      const matchesSearch = 
+        lead.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        lead.email.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesStatus = statusFilter === 'All' || lead.status === statusFilter;
+      const matchesService = serviceFilter === 'All' || lead.service === serviceFilter;
+      return matchesSearch && matchesStatus && matchesService;
+    });
+  }, [leads, searchTerm, statusFilter, serviceFilter]);
 
-  const services = ['All', ...new Set(leads.map(l => l.service))];
+  const services = useMemo(() => ['All', ...new Set(leads.map(l => l.service))], [leads]);
   const statuses: (LeadStatus | 'All')[] = ['All', 'New', 'Contacted', 'Qualified', 'Converted', 'Lost'];
 
   // Analytics Calculations
-  const stats = {
+  const stats = useMemo(() => ({
     total: leads.length,
     new: leads.filter(l => l.status === 'New').length,
     converted: leads.filter(l => l.status === 'Converted').length,
     conversionRate: leads.length > 0 ? Math.round((leads.filter(l => l.status === 'Converted').length / leads.length) * 100) : 0
-  };
+  }), [leads]);
 
   if (authLoading || (user && loading)) {
     return (

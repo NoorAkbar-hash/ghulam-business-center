@@ -27,6 +27,7 @@ export default function About() {
                   src="/images/ghulam_ceo.jpg" 
                   alt="Corporate Tower" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                   onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800";
                   }}
@@ -42,6 +43,7 @@ export default function About() {
                   src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800" 
                   alt="Business Discussion" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </motion.div>
               <motion.div 
@@ -54,6 +56,7 @@ export default function About() {
                   src="/images/ghulam_reception_1.jpg" 
                   alt="Office Space" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                   onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200";
                   }}
@@ -114,7 +117,10 @@ export default function About() {
               </div>
 
               <div className="mt-12 flex items-center gap-8">
-                <button className="bg-brand-navy hover:bg-brand-navy/90 text-white px-8 py-4 rounded-xl font-bold transition-all hover:shadow-xl">
+                <button 
+                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-brand-navy hover:bg-brand-navy/90 text-white px-8 py-4 rounded-xl font-bold transition-all hover:shadow-xl"
+                >
                   Learn More About Us
                 </button>
                 <div className="flex flex-col">

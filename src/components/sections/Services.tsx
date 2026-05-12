@@ -82,6 +82,7 @@ export default function Services() {
                   src={service.image} 
                   alt={service.title} 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-brand-navy/60 group-hover:bg-brand-navy/40 transition-colors"></div>
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
@@ -97,7 +98,10 @@ export default function Services() {
                 <p className="text-slate-600 mb-8 leading-relaxed">
                   {service.description}
                 </p>
-                <div className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group/btn cursor-pointer">
+                <div 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between group/btn cursor-pointer"
+                >
                   <span className="text-brand-navy font-bold text-sm uppercase tracking-widest group-hover/btn:text-brand-gold transition-colors">Learn More</span>
                   <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-brand-navy group-hover/btn:bg-brand-gold group-hover/btn:text-white transition-all">
                     <ArrowRight size={16} />
@@ -110,7 +114,10 @@ export default function Services() {
 
         {/* View All Button */}
         <div className="text-center mt-16">
-          <button className="bg-white hover:bg-brand-navy hover:text-white text-brand-navy border-2 border-brand-navy px-10 py-4 rounded-xl font-bold transition-all hover:shadow-xl">
+          <button 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-white hover:bg-brand-navy hover:text-white text-brand-navy border-2 border-brand-navy px-10 py-4 rounded-xl font-bold transition-all hover:shadow-xl"
+          >
             View All Services
           </button>
         </div>

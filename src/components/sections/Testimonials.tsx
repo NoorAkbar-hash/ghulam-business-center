@@ -66,7 +66,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section id="testimonials" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center md:text-left flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
           <div className="max-w-2xl">

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 import { Lock, Mail, ArrowRight, ShieldCheck } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -12,6 +12,17 @@ export default function AdminLogin() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  // Redirect if already logged in
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate('/admin');
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();

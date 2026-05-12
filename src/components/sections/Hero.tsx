@@ -42,10 +42,21 @@ export default function Hero() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5">
-                <Button className="w-full sm:w-auto px-10 py-5 rounded-lg">
+                <Button 
+                  className="w-full sm:w-auto px-10 py-5 rounded-lg"
+                  onClick={() => {
+                    document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Our Success Stories
                 </Button>
-                <Button variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-brand-navy px-10 py-5 rounded-lg">
+                <Button 
+                  variant="outline" 
+                  className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-brand-navy px-10 py-5 rounded-lg"
+                  onClick={() => {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   Get a Quote
                 </Button>
               </div>

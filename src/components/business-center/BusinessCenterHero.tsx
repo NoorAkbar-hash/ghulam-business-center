@@ -61,10 +61,16 @@ export default function BusinessCenterHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="bg-brand-gold hover:bg-brand-gold/90 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand-gold/20">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-brand-gold hover:bg-brand-gold/90 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand-gold/20"
+              >
                 Book Office Tour
               </button>
-              <button className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 backdrop-blur-sm">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 backdrop-blur-sm"
+              >
                 Get Free Consultation
               </button>
             </div>
