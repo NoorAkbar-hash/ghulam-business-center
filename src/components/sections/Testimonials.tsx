@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Sarah Jenkins",
     role: "Director, Global Solutions",
-    content: "The level of professionalism and dedication we experienced was unmatched. They handled everything from office space to legal documentation with perfect precision.",
+    content: "The level of professionalism and dedication we encountered was unmatched. They handled everything from office space to legal documentation with perfect precision.",
     avatar: "https://i.pravatar.cc/150?u=s",
     rating: 5
   },

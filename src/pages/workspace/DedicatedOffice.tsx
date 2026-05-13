@@ -43,7 +43,7 @@ export default function DedicatedOffice() {
                 Your Own <span className="text-brand-gold">Private Hub</span>
               </h2>
               <p className="text-slate-500 text-lg mb-8 leading-relaxed">
-                Experience the perfect balance of privacy and community. Our dedicated offices provide a secure space for your team while giving you access to all the premium amenities of our business center.
+                Enjoy the perfect balance of privacy and community. Our dedicated offices provide a secure space for your team while giving you access to all the premium amenities of our business center.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {[

@@ -59,8 +59,8 @@ export default function WhyChooseUs() {
           
           <div className="lg:w-1/2 grid grid-cols-2 gap-6">
             <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center text-center">
-              <span className="text-4xl font-bold text-brand-navy font-display mb-2">9+</span>
-              <span className="text-slate-500 font-medium uppercase tracking-widest text-xs">Years of Trust</span>
+              <span className="text-4xl font-bold text-brand-navy font-display mb-2">100%</span>
+              <span className="text-slate-500 font-medium uppercase tracking-widest text-xs">Client Dedication</span>
             </div>
             <div className="bg-brand-navy p-8 rounded-3xl flex flex-col items-center text-center shadow-xl shadow-brand-navy/20">
               <span className="text-4xl font-bold text-brand-gold font-display mb-2">50+</span>

@@ -3,8 +3,8 @@ import { MousePointer2, CheckCircle2, Award, Clock } from 'lucide-react';
 
 const stats = [
   { label: "Available Spaces", value: "120+", icon: MousePointer2 },
+  { icon: Award, label: "Quality Standard", value: "Premium" },
   { label: "Happy Clients", value: "500+", icon: CheckCircle2 },
-  { label: "Years Experience", value: "25+", icon: Award },
   { label: "Access", value: "24/7", icon: Clock },
 ];
 

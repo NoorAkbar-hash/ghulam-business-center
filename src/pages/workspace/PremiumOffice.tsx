@@ -158,7 +158,7 @@ export default function PremiumOffice() {
              <div className="p-10 rounded-[2.5rem] border border-slate-100 bg-white hover:border-brand-gold/50 transition-all flex flex-col">
                 <span className="text-slate-400 font-bold uppercase tracking-widest text-[10px] mb-4">Standard Suite</span>
                 <h3 className="text-3xl font-display font-black text-brand-navy mb-2 uppercase tracking-tighter">Executive</h3>
-                <div className="text-4xl font-black text-brand-gold mb-8">QAR 4,500<span className="text-sm text-slate-400 font-normal ml-2">/ month</span></div>
+                <div className="text-4xl font-black text-brand-gold mb-8">QAR 1500<span className="text-sm text-slate-400 font-normal ml-2">/ month</span></div>
                 <div className="space-y-4 mb-10 grow">
                   {["1-2 Person Workspace", "Managed Reception", "High-speed WiFi", "Meeting Room: 5hrs/mo"].map(f => (
                     <div key={f} className="flex items-center gap-3 text-sm text-slate-500">

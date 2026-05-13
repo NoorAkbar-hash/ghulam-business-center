@@ -36,7 +36,7 @@ export default function Process() {
             <span className="text-brand-gold font-bold uppercase tracking-[0.2em] text-sm block mb-4">Step-by-Step</span>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">How Company Formation Works</h2>
             <p className="text-slate-400 text-lg">
-              Our streamlined process ensures that your business setup experience is 
+              Our streamlined process ensures that your business setup journey is 
               efficient, transparent, and completely stress-free.
             </p>
           </motion.div>

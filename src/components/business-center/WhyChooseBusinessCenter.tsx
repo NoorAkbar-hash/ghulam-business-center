@@ -64,7 +64,7 @@ export default function WhyChooseBusinessCenter() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-display font-black text-brand-navy uppercase tracking-tighter"
           >
-            Experience The <span className="text-brand-gold">Superior Standard</span> In Workspaces
+            Discover The <span className="text-brand-gold">Superior Standard</span> In Workspaces
           </motion.h2>
         </div>
 
