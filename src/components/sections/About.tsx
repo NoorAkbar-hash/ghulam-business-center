@@ -3,9 +3,9 @@ import { Check, Award, Shield, Zap } from 'lucide-react';
 import { CONTACT_DETAILS } from '../../constants';
 
 const stats = [
-  { icon: Award, label: "Market Experience", value: "15+ Years" },
   { icon: Shield, label: "Compliance Rate", value: "100%" },
   { icon: Zap, label: "Setup Speed", value: "Fast Track" },
+  { icon: Award, label: "Quality Standard", value: "Premium" },
 ];
 
 export default function About() {
@@ -62,12 +62,6 @@ export default function About() {
                   }}
                 />
               </motion.div>
-            </div>
-            
-            {/* Experience badge */}
-            <div className="absolute -bottom-6 -right-6 bg-brand-navy p-8 rounded-2xl border-l-[6px] border-brand-gold shadow-2xl">
-              <span className="block text-brand-gold font-bold text-5xl mb-1">15+</span>
-              <span className="text-white text-sm font-medium uppercase tracking-widest leading-tight">Years of <br />Excellence in Qatar</span>
             </div>
           </div>
 
@@ -135,3 +129,4 @@ export default function About() {
     </section>
   );
 }
+
