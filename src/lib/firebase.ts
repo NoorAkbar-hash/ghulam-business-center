@@ -1,18 +1,12 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
 import firebaseConfig from '../../firebase-applet-config.json';
 
-// INIT APP
 const app = initializeApp(firebaseConfig);
-
-// AUTH
+export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
 export const auth = getAuth(app);
 
-// FIRESTORE (SIMPLE + SAFE)
-export const db = getFirestore(app);
-
-// ENUMS
 export enum OperationType {
   CREATE = 'create',
   UPDATE = 'update',
@@ -22,17 +16,30 @@ export enum OperationType {
   WRITE = 'write',
 }
 
-// ERROR HANDLER
-export function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
-  console.error({
-    error: error instanceof Error ? error.message : String(error),
-    operationType,
-    path,
-    auth: {
-      uid: auth.currentUser?.uid,
-      email: auth.currentUser?.email,
-    }
-  });
+interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: {
+    userId?: string | null;
+    email?: string | null;
+    emailVerified?: boolean | null;
+    isAnonymous?: boolean | null;
+  }
+}
 
-  throw error;
+export function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
+  const errInfo: FirestoreErrorInfo = {
+    error: error instanceof Error ? error.message : String(error),
+    authInfo: {
+      userId: auth.currentUser?.uid,
+      email: auth.currentUser?.email,
+      emailVerified: auth.currentUser?.emailVerified,
+      isAnonymous: auth.currentUser?.isAnonymous
+    },
+    operationType,
+    path
+  };
+  console.error('Firestore Error: ', JSON.stringify(errInfo));
+  throw new Error(JSON.stringify(errInfo));
 }

@@ -7,7 +7,7 @@ interface SEOProps {
   url?: string;
 }
 
-export default function SEO({ title, description, image = '/logo.png', url = 'https://ghulam.qa' }: SEOProps) {
+export default function SEO({ title, description, image = '/logo.png', url = 'https://theghulamgroup.com' }: SEOProps) {
   const fullTitle = `${title} | Ghulam Business Center Doha`;
   
   return (

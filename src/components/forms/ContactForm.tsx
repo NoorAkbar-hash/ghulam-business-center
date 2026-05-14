@@ -20,16 +20,26 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Safety timeout to prevent permanent "Sending..." state
+    const timeoutId = setTimeout(() => {
+      setIsSubmitting(false);
+      toast.error('Request timed out. Please check your internet connection and try again.');
+    }, 15000);
+    
     try {
-      // Save to Firebase
+      // Save to Firestore leads collection
       await addDoc(collection(db, 'leads'), {
         ...formData,
         status: 'New',
         createdAt: serverTimestamp(),
-        updatedAt: serverTimestamp()
+        updatedAt: serverTimestamp(),
+        source: 'Contact Form'
       });
       
-      toast.success('Inquiry submitted! Our team will contact you soon.');
+      clearTimeout(timeoutId);
+      toast.success('Inquiry received! Our team will contact you shortly.');
+      
+      // Reset form on success
       setFormData({
         name: '',
         email: '',
@@ -38,8 +48,18 @@ export default function ContactForm() {
         message: ''
       });
       (e.target as HTMLFormElement).reset();
+
     } catch (error: any) {
-      handleFirestoreError(error, OperationType.WRITE, 'leads');
+      clearTimeout(timeoutId);
+      console.error('Submission error:', error);
+      
+      let msg = 'Failed to send inquiry. ';
+      if (error.code === 'permission-denied') {
+        msg += 'Permission denied. Please call us directly.';
+      } else {
+        msg += 'Please try again later.';
+      }
+      toast.error(msg);
     } finally {
       setIsSubmitting(false);
     }
