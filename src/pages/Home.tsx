@@ -6,8 +6,6 @@ import About from '../components/sections/About';
 import Services from '../components/sections/Services';
 import Process from '../components/sections/Process';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
-import Partners from '../components/sections/Partners';
-import Counters from '../components/sections/Counters';
 import Testimonials from '../components/sections/Testimonials';
 import Blog from '../components/sections/Blog';
 import FAQ from '../components/sections/FAQ';
@@ -43,10 +41,8 @@ export default function Home() {
       <LoadingOverlay />
       <Navbar />
       <Hero />
-      <Partners />
       <About />
       <Services />
-      <Counters />
       <Process />
       <WhyChooseUs />
       <Testimonials />

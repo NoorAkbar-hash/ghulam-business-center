@@ -57,14 +57,10 @@ export default function WhyChooseUs() {
             </motion.div>
           </div>
           
-          <div className="lg:w-1/2 grid grid-cols-2 gap-6">
-            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center text-center">
-              <span className="text-4xl font-bold text-brand-navy font-display mb-2">100%</span>
-              <span className="text-slate-500 font-medium uppercase tracking-widest text-xs">Client Dedication</span>
-            </div>
-            <div className="bg-brand-navy p-8 rounded-3xl flex flex-col items-center text-center shadow-xl shadow-brand-navy/20">
-              <span className="text-4xl font-bold text-brand-gold font-display mb-2">50+</span>
-              <span className="text-white/70 font-medium uppercase tracking-widest text-xs">Major Partners</span>
+          <div className="lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="bg-slate-50 p-12 rounded-[2.5rem] border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <span className="text-5xl font-black text-brand-navy font-display mb-3 tracking-tighter">100%</span>
+              <span className="text-slate-500 font-bold uppercase tracking-[0.2em] text-[10px]">Client Dedication</span>
             </div>
           </div>
         </div>

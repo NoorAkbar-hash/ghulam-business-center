@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="space-y-8">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-10 h-10 rounded-lg bg-brand-gold flex items-center justify-center overflow-hidden relative">
-                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" onError={(e) => e.currentTarget.style.display = 'none'} />
+                <img src="/images/logo.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
               <span className="font-display font-bold text-xl uppercase tracking-tighter text-white">
                 Ghulam <span className="text-brand-gold font-light">Business Center</span>

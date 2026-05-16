@@ -61,29 +61,6 @@ export default function Hero() {
                 </Button>
               </div>
             </motion.div>
-
-            {/* Quick Stats Glass Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 1 }}
-              className="mt-16 glass p-8 rounded-[2rem] flex flex-wrap items-center justify-center lg:justify-start gap-12 w-fit mx-auto lg:mx-0"
-            >
-              <div>
-                <div className="text-4xl font-black text-white tracking-tighter">2000+</div>
-                <div className="text-[10px] uppercase font-bold text-white/50 tracking-widest mt-1">Cases Solved</div>
-              </div>
-              <div className="hidden sm:block w-[1px] h-10 bg-white/10"></div>
-              <div>
-                <div className="text-4xl font-black text-white tracking-tighter">300+</div>
-                <div className="text-[10px] uppercase font-bold text-white/50 tracking-widest mt-1">Global Clients</div>
-              </div>
-              <div className="hidden sm:block w-[1px] h-10 bg-white/10"></div>
-              <div>
-                <div className="text-4xl font-black text-white tracking-tighter">10+</div>
-                <div className="text-[10px] uppercase font-bold text-white/50 tracking-widest mt-1">Countries</div>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right Column: Visual Showcase */}
